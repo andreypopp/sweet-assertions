@@ -1,7 +1,5 @@
 # sweet-assertions
 
-**DOES NOT WORK RIGHT NOW**
-
 Syntax for writing informative testing assertions.
 
 This is a set of macros for [Sweet.js][1] which extends JavaScript grammar with

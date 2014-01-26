@@ -29,5 +29,13 @@ describe "sweet-assertions" {
     true should be true
     false should be false
     null should be null
+
+    var x = 12
+
+    x should == 12
+
+    var z = {y: 60}
+
+    z should have y
   }
 }
