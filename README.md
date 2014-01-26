@@ -27,13 +27,13 @@ where `tests.sjs` looks like this:
 
       it "works" {
 
-        1 + 2 should be == 2 + 1
-        2 should be != 1
+        1 + 2 should == 2 + 1
+        2 should != 1
 
-        2 should be > 1
-        2 should be >= 1
-        1 should be < 2
-        1 should be <= 2
+        2 should > 1
+        2 should >= 1
+        1 should < 2
+        1 should <= 2
 
         {x: 1} should have x
 
