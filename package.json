@@ -1,8 +1,8 @@
 {
   "name": "sweet-assertions",
   "version": "0.0.0",
-  "description": "Syntax for writing informative assertions for tests",
-  "main": "index.js",
+  "description": "Syntax for writing informative testing assertions",
+  "main": "index.sjs",
   "scripts": {
     "test": "mocha -R specs.js"
   },
