@@ -15,7 +15,7 @@ test: spec.js
 	@$(BIN)/mocha -b -R spec spec.js
 
 spec.js: spec.sjs
-	@$(BIN)/sjs -m sweet-bdd -m ./macros.sjs $< > $@
+	@$(BIN)/sjs -m sweet-bdd -m ./index.sjs $< > $@
 
 release-patch: test lint
 	@$(call release,patch)
