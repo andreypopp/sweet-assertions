@@ -1,19 +1,3 @@
-let describe = macro {
-   rule { $name { $body... } } => {
-     describe($name, function() {
-       $body...
-     } );
-   }
-}
-
-let it = macro {
-  rule { $name { $body... } } => {
-    it($name, function() {
-      $body...
-    });
-  }
-}
-
 macro fmt {
   case { _ ( $val:expr ) } => {
     function fmt(v) {
@@ -107,6 +91,4 @@ macro should {
   }
 }
 
-export describe;
-export it;
 export should;
