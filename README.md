@@ -52,5 +52,5 @@ where `tests.sjs` looks like this:
       }
     }
 
-[Sweet.js]: http://sweetjs.org/
-[sweet-bdd]: https://github.com/Havvy/sweet-bdd
+[1]: http://sweetjs.org/
+[2]: https://github.com/Havvy/sweet-bdd
