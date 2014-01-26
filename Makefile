@@ -8,22 +8,19 @@ install link:
 clean:
 	rm -rf node_modules/ specs/client.bundle.js
 
-lint:
-	@$(BIN)/jshint *.js
-
 test: spec.js
 	@$(BIN)/mocha -b -R spec spec.js
 
 spec.js: spec.sjs
 	@$(BIN)/sjs -m sweet-bdd -m ./index.sjs $< > $@
 
-release-patch: test lint
+release-patch: test
 	@$(call release,patch)
 
-release-minor: test lint
+release-minor: test
 	@$(call release,minor)
 
-release-major: test lint
+release-major: test
 	@$(call release,major)
 
 publish:
