@@ -12,13 +12,13 @@ macro fmt {
 }
 
 macro should {
-  rule infix { $lhs:expr | be === $rhs:expr } => {
+  rule infix { $lhs:expr | be == $rhs:expr } => {
     assert.deepEqual(
       $lhs, $rhs,
       fmt($lhs) + " should be equal to " + fmt($rhs))
   }
 
-  rule infix { $lhs:expr | be !== $rhs:expr } => {
+  rule infix { $lhs:expr | be != $rhs:expr } => {
     assert.notDeepEqual(
       $lhs, $rhs,
       fmt($lhs) + " should not be equal to " + fmt($rhs))

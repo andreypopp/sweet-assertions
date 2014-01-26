@@ -11,19 +11,11 @@ clean:
 lint:
 	@$(BIN)/jshint *.js
 
-test:: test-server test-client-headless
+test: spec.js
+	@$(BIN)/mocha -b -R spec spec.js
 
-test-client:: specs/client.bundle.js
-	@open specs/index.html
-
-test-client-headless:: specs/client.bundle.js
-	@$(BIN)/mocha-phantomjs ./specs/index.html
-
-test-server::
-	@$(BIN)/mocha -b -R spec specs/server.js specs/common.js
-
-specs/client.bundle.js: specs/client.js ./*.js
-	@$(BIN)/browserify --debug $< > $@
+spec.js: spec.sjs
+	@$(BIN)/sjs -m sweet-bdd -m ./macros.sjs $< > $@
 
 release-patch: test lint
 	@$(call release,patch)
