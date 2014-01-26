@@ -12,34 +12,34 @@ macro fmt {
 }
 
 macro should {
-  rule infix { $lhs:expr | be == $rhs:expr } => {
+  rule infix { $lhs:expr | == $rhs:expr } => {
     assert.deepEqual(
       $lhs, $rhs,
       fmt($lhs) + " should be equal to " + fmt($rhs))
   }
 
-  rule infix { $lhs:expr | be != $rhs:expr } => {
+  rule infix { $lhs:expr | != $rhs:expr } => {
     assert.notDeepEqual(
       $lhs, $rhs,
       fmt($lhs) + " should not be equal to " + fmt($rhs))
   }
 
-  rule infix { $lhs:expr | be > $rhs:expr } => {
+  rule infix { $lhs:expr | > $rhs:expr } => {
     assert.ok(
       $lhs > $rhs,
       fmt($lhs) + " should be greater than " + fmt($rhs))
   }
-  rule infix { $lhs:expr | be >= $rhs:expr } => {
+  rule infix { $lhs:expr | >= $rhs:expr } => {
     assert.ok(
       $lhs >= $rhs,
       fmt($lhs) + " should be greater or equal than " + fmt($rhs))
   }
-  rule infix { $lhs:expr | be < $rhs:expr } => {
+  rule infix { $lhs:expr | < $rhs:expr } => {
     assert.ok(
       $lhs < $rhs,
       fmt($lhs) + " should be less than " + fmt($rhs))
   }
-  rule infix { $lhs:expr | be <= $rhs:expr } => {
+  rule infix { $lhs:expr | <= $rhs:expr } => {
     assert.ok(
       $lhs <= $rhs,
       fmt($lhs) + " should be less or equal than " + fmt($rhs))
@@ -51,16 +51,6 @@ macro should {
       fmt($lhs) + " should have " + fmt($rhs) + " property")
   }
 
-  rule infix { $lhs:expr | be true } => {
-    assert.ok(
-      $lhs === true,
-      fmt($lhs) + " should be true")
-  }
-  rule infix { $lhs:expr | be false } => {
-    assert.ok(
-      $lhs === false,
-      fmt($lhs) + " should be false")
-  }
   rule infix { $lhs:expr | be truthy } => {
     assert.ok(
       $lhs,
@@ -88,6 +78,12 @@ macro should {
     assert.doesNotThrow(
       function() { $lhs },
       fmt($lhs) + " should not throw")
+  }
+
+  rule infix { $lhs:expr | be $rhs } => {
+    assert.ok(
+      $lhs === $rhs,
+      fmt($lhs) + " should be " + fmt($rhs))
   }
 }
 

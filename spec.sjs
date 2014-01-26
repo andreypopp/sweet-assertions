@@ -7,18 +7,16 @@ describe "sweet-assertions" {
 
   it "works" {
 
-    1 + 2 should be == 2 + 1
-    2 should be != 1
+    1 + 2 should == 2 + 1
+    1 + 2 should == 2 + 1
+    2 should != 1
 
-    2 should be > 1
-    2 should be >= 1
-    1 should be < 2
-    1 should be <= 2
+    2 should > 1
+    2 should >= 1
+    1 should < 2
+    1 should <= 2
 
     {x: 1} should have x
-
-    true should be true
-    false should be false
 
     true should be truthy
     null should be falsy
@@ -27,5 +25,9 @@ describe "sweet-assertions" {
     yes() should not throw
 
     "aabbcc" should contain "bb"
+
+    true should be true
+    false should be false
+    null should be null
   }
 }
