@@ -1,0 +1,29 @@
+{
+  "name": "sweet-assertions",
+  "version": "0.0.0",
+  "description": "Syntax for writing informative assertions for tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R specs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andreypopp/sweet-assertions"
+  },
+  "keywords": [
+    "sweet-macros",
+    "assertions",
+    "testing"
+  ],
+  "author": "Andrey Popp <8mayday@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreypopp/sweet-assertions/issues"
+  },
+  "homepage": "https://github.com/andreypopp/sweet-assertions",
+  "devDependencies": {
+    "semver": "~2.2.1",
+    "mocha": "~1.17.1",
+    "sweet.js": "~0.4.1"
+  }
+}
