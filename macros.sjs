@@ -1,7 +1,6 @@
 let describe = macro {
    rule { $name { $body... } } => {
      describe($name, function() {
-
        $body...
      } );
    }
