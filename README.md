@@ -1,8 +1,15 @@
 # sweet-assertions
 
+**DOES NOT WORK RIGHT NOW**
+
 Syntax for writing informative testing assertions.
 
-Install:
+This is a set of macros for [Sweet.js][1] which extends JavaScript grammar with
+syntax for writing informative testing assertions. It tries to generate
+assertion messages which contain useful information, like `1 should be == 2`
+would generate `1 should be equal to 2` error message and so on.
+
+I suggest using it with [sweet-bdd][2] for better `describe`, `it` syntax:
 
     % npm install --global sweet.js
     % npm install sweet-bdd sweet-assertions
@@ -44,3 +51,6 @@ where `tests.sjs` looks like this:
         "aabbcc" should contain "bb"
       }
     }
+
+[Sweet.js]: http://sweetjs.org/
+[sweet-bdd]: https://github.com/Havvy/sweet-bdd
