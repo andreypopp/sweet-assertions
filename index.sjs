@@ -23,7 +23,7 @@ let assert = macro {
 // This is workaround for https://github.com/mozilla/sweet.js/issues/232
 macro scope {
   rule { { $body ... } } => {
-    !(function () {
+    void (function () {
       $body ...
     })();
   }
