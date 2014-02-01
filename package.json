@@ -24,6 +24,7 @@
   "devDependencies": {
     "semver": "~2.2.1",
     "mocha": "~1.17.1",
-    "sweet.js": "~0.4.1"
+    "sweet.js": "~0.4.1",
+    "sweet-bdd": "~1.0.0"
   }
 }
