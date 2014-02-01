@@ -6,13 +6,13 @@ install link:
 	@npm $@
 
 clean:
-	rm -rf node_modules/ specs/client.bundle.js
+	rm -f spec.js
 
 test: spec.js
 	@$(BIN)/mocha -b -R spec spec.js
 
-spec.js: spec.sjs
-	@$(BIN)/sjs -m sweet-bdd -m ./index.sjs $< > $@
+spec.js: spec.sjs index.sjs
+	@$(BIN)/sjs -m sweet-bdd -m ./index.sjs spec.sjs > $@
 
 release-patch: test
 	@$(call release,patch)
