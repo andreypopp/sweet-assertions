@@ -23,18 +23,11 @@ let assert = macro {
 // This is workaround for https://github.com/mozilla/sweet.js/issues/232
 macro scope {
   rule { { $body ... } } => {
-    (function () {
+    !(function () {
       $body ...
     })();
   }
 }
-
-// Workaround ASI breakage when using self invoking function expressions
-let var = macro {
-  rule { $id:ident = $e:expr } => { var $id = $e; }
-  rule { $id:ident } => { var $id; }
-}
-export var;
 
 macro should {
   rule infix { $lhs:expr | == $rhs:expr } => {

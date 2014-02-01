@@ -34,8 +34,9 @@ describe "sweet-assertions" {
 
     x should == 12
 
-    var z = {y: 60}
+    var z = {y: 60};
 
     z should have y
+
   }
 }
